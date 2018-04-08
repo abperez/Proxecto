@@ -19,7 +19,9 @@
 #include "statistics.cpp"                   // final statistics
 #include "print_info.cpp"                   // information of the gsea routine
 
-
+//*****************************************************************************
+//******************************** compute_gsea_cpu ***************************
+//*****************************************************************************
 
 template <
     class exprs_t,                          // data type for expression data
@@ -225,7 +227,9 @@ void compute_gsea_cpu(
 
 }
 
-//********************************
+//*****************************************************************************
+//******************************** compute_gsea_mpi ***************************
+//*****************************************************************************
 
 template <
     class exprs_t,                          // data type for expression data
@@ -347,7 +351,7 @@ void compute_gsea_mpi(
     // vector for the storage of the enrichment scores
     std::vector<enrch_t> global_result(num_paths*num_perms);
 
-	}
+	
 
 
     // for each batch of perms
@@ -435,7 +439,7 @@ void compute_gsea_mpi(
     #ifdef GSEA_PRINT_TIMINGS
     //TIMERSTOP(host_overall)
     #endif
-
+    }
 
 }
 
